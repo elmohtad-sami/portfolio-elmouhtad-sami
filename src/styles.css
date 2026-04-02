@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --color-slate-950: #020617;
+  --color-indigo-500: #6366f1;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; font-family: 'Fira Code', monospace; }
+  body { 
+    @apply bg-[#030712] text-[#00ff41] antialiased selection:bg-[#003b00]; /* Matrix green base, dark dark bg */
+    background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%);
+    overflow-x: hidden;
+  }
+}
+
+/* Starry Night Animation / Hacker Vibe elements */
+.star-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -20;
+  background: 
+    radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, rgba(255,255,255,0.7), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, rgba(255,255,255,0.9), rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.6), rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: stars 4s linear infinite;
+  opacity: 0.2;
+}
+
+@keyframes stars {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-200px); }
+}
+
+/* Neon Glow utilities */
+.neon-text-cyan {
+  text-shadow: 0 0 5px theme('colors.cyan.400'), 0 0 10px theme('colors.cyan.400'), 0 0 20px theme('colors.cyan.400');
+  color: theme('colors.cyan.300');
+}
+
+.neon-text-green {
+  text-shadow: 0 0 5px #00ff41, 0 0 10px #00ff41;
+  color: #00ff41;
+}
+
+.neon-border-hover:hover {
+  box-shadow: 0 0 5px #00ff41, 0 0 15px #00ff41 inset;
+  border-color: #00ff41;
+}
+

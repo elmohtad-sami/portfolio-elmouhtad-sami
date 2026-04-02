@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #3291FF;
+  --color-brand-dark: #030303;
+  --color-brand-light: #EDEDED;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-[var(--color-brand-dark)] text-[var(--color-brand-light)] font-sans antialiased selection:bg-brand-blue/30;
+  }
+}
