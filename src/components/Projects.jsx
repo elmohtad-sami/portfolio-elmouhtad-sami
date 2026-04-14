@@ -40,7 +40,11 @@ export default function Projects() {
               key={i}
               variants={itemVariants}
               whileHover={{ scale: 1.03, y: -5 }}
-              className="group relative bg-slate-900/50 border border-white/5 rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-500/10 hover:border-indigo-500/30 transition-all duration-300 flex flex-col h-full"
+              onClick={() => {
+                const url = project.demo !== '#' ? project.demo : (project.github !== '#' ? project.github : null);
+                if (url) window.open(url, '_blank');
+              }}
+              className="group relative bg-slate-900/50 border border-white/5 rounded-2xl overflow-hidden shadow-lg hover:shadow-indigo-500/10 hover:border-indigo-500/30 transition-all duration-300 flex flex-col h-full cursor-pointer"
             >
               {project.image && (
                 <div className="h-48 overflow-hidden rounded-t-2xl">
@@ -50,11 +54,11 @@ export default function Projects() {
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-xl font-semibold text-slate-100 group-hover:text-indigo-400 transition-colors">{project.title}</h3>
-                  <div className="flex space-x-3 text-slate-400">
-                    <a href={project.github} className="hover:text-slate-100 transition-colors">
+                  <div className="flex space-x-3 text-slate-400" onClick={(e) => e.stopPropagation()}>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="hover:text-slate-100 transition-colors">
                       <GithubIcon className="w-5 h-5" />
                     </a>
-                    <a href={project.demo} className="hover:text-slate-100 transition-colors">
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer" className="hover:text-slate-100 transition-colors">
                       <ExternalLink className="w-5 h-5" />
                     </a>
                   </div>

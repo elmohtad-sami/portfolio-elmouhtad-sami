@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { personalInfo } from '../data';
 
 export default function About() {
@@ -58,9 +59,9 @@ export default function About() {
             </p>
             
             <div className="pt-4">
-               <a href="/contact" className="inline-block px-8 py-3 bg-white/5 border border-white/10 hover:bg-white/10 text-slate-200 rounded-lg transition-colors font-medium">
+               <Link to="/contact" className="inline-block px-8 py-3 bg-white/5 border border-white/10 hover:bg-white/10 text-slate-200 rounded-lg transition-colors font-medium">
                  Get in touch
-               </a>
+               </Link>
             </div>
           </motion.div>
 
