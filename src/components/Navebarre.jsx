@@ -3,39 +3,36 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Send, Home, User, GraduationCap, Wrench, Briefcase } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa6';
 import { personalInfo } from '../data';
-import { Link, useLocation } from 'react-router-dom';
 
 export default function Navebarre() {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
 
   const links = [
-    { name: 'Home', path: '/', icon: Home },
-    { name: 'About', path: '/about', icon: User },
-    { name: 'Education', path: '/education', icon: GraduationCap },
-    { name: 'Skills', path: '/skills', icon: Wrench },
-    { name: 'Projects', path: '/projects', icon: Briefcase },
+    { name: 'Home', path: '#home', icon: Home },
+    { name: 'About', path: '#about', icon: User },
+    { name: 'Education', path: '#education', icon: GraduationCap },
+    { name: 'Skills', path: '#skills', icon: Wrench },
+    { name: 'Projects', path: '#projects', icon: Briefcase },
   ];
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/10">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-        <Link to="/" className="text-xl font-bold tracking-tighter text-slate-50">
+        <a href="#home" className="text-xl font-bold tracking-tighter text-slate-50">
           {personalInfo.name.split(' ')[0]}<span className="text-indigo-500">.</span>
-        </Link>
+        </a>
         
         <nav className="hidden md:flex space-x-8">
           {links.map((link) => {
-            const isActive = location.pathname === link.path;
             return (
-              <Link 
+              <a 
                 key={link.name} 
-                to={link.path}
+                href={link.path}
                 className={"flex items-center gap-2 text-sm font-medium transition-colors hover:text-indigo-400 "}
               >
                 <link.icon className="w-4 h-4" />
                 {link.name}
-              </Link>
+              </a>
             );
           })}
         </nav>
@@ -49,10 +46,10 @@ export default function Navebarre() {
               <FaLinkedin className="w-5 h-5" />
             </a>
           </div>
-          <Link to="/contact" className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 rounded-lg border border-indigo-500/20 transition-all hover:scale-105 active:scale-95">
+          <a href="#contact" className="flex items-center gap-2 px-4 py-2 text-sm font-medium bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-400 rounded-lg border border-indigo-500/20 transition-all hover:scale-105 active:scale-95">
             <span>Let's talk</span>
             <Send className="w-3.5 h-3.5" />
-          </Link>
+          </a>
         </div>
 
         <button 
@@ -73,27 +70,26 @@ export default function Navebarre() {
           >
             <div className="flex flex-col px-4 py-4 space-y-4">
               {links.map((link) => {
-                const isActive = location.pathname === link.path;
                 return (
-                  <Link 
+                  <a 
                     key={link.name} 
-                    to={link.path}
+                    href={link.path}
                     onClick={() => setIsOpen(false)}
                     className={"flex items-center gap-3 text-base font-medium transition-colors hover:text-indigo-400 "}
                   >
                     <link.icon className="w-5 h-5 text-indigo-400" />
                     {link.name}
-                  </Link>
+                  </a>
                 );
               })}
-              <Link 
-                to="/contact"
+              <a 
+                href="#contact"
                 onClick={() => setIsOpen(false)}
                 className="flex items-center justify-center gap-2 px-4 py-2 mt-2 text-sm font-medium bg-indigo-500 text-white rounded-lg shadow-lg shadow-indigo-500/20"
               >
                 <span>Let's talk</span>
                 <Send className="w-4 h-4" />
-              </Link>
+              </a>
               
               <div className="flex items-center justify-center space-x-6 pt-4 border-t border-white/5">
                 <a href={personalInfo.socials.github} target="_blank" rel="noreferrer" className="text-slate-400">

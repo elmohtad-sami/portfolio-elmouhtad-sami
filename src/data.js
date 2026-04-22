@@ -2,7 +2,8 @@ export const personalInfo = {
   name: "ELMOUHTAD.SAMI",
   title: "Full Stack Developer",
   about: "I am a passionate software developer dedicated to building high-quality, accessible, and performant web applications. With expertise in modern frontend frameworks and robust backend technologies, I enjoy solving complex problems and delivering exceptional digital experiences. Coming from an academic background with a Licence in Accounting, Finance, and Taxation, I naturally bridge the gap between technology and business. This dual expertise allows me to easily translate complex financial logic and business workflows into scalable, efficient code.",
-  email: "elmouhtadsami@gmail.com",
+  phone: "+212 602903529",
+  email: "[elmouhtadsami@gmail.com]",
   socials: {
     github: "https://github.com/elmohtad-sami",
     linkedin: "https://www.linkedin.com/in/sami-elmouhtad/",

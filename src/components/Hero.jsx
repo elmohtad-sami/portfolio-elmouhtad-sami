@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import TypewriterText from './TypewriterText';
 
 export default function Hero() {
@@ -105,12 +104,12 @@ export default function Hero() {
         <h1 className="text-white text-3xl md:text-4xl font-bold tracking-wider">
         ELMOUHTAD.SAMI 
         </h1>
-        <Link
-          to="/projects"
+        <a
+          href="#projects"
           className="px-6 py-2 border-2 border-[#00f0ff] text-[#00f0ff] rounded-full hover:bg-[#00f0ff] hover:text-[#0a0f18] transition-all duration-300 font-semibold uppercase text-sm tracking-widest"
         >
           View my projects
-        </Link>
+        </a>
       </div>
 
       {/* Fullscreen Image Modal (Lightbox) */}

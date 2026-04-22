@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Send, Phone } from 'lucide-react';
 import { personalInfo } from '../data';
 
 export default function Contact() {
@@ -22,11 +22,23 @@ export default function Contact() {
             <div className="space-y-6 flex flex-col justify-center">
               <div className="flex items-center space-x-4 p-4 rounded-xl bg-white/5 border border-white/10">
                 <div className="p-3 bg-indigo-500/20 text-indigo-400 rounded-lg">
+                  <Phone className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-medium text-slate-400">Call me at</h4>
+                  <a href={`tel:${personalInfo.phone}`} className="text-slate-100 hover:text-indigo-400 transition-colors">
+                    {personalInfo.phone}
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4 p-4 rounded-xl bg-white/5 border border-white/10">
+                <div className="p-3 bg-indigo-500/20 text-indigo-400 rounded-lg">
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-slate-400">Email me at</h4>
-                  <a href={"mailto:"} className="text-slate-100 hover:text-indigo-400 transition-colors">
+                  <a href={`mailto:${personalInfo.email}`} className="text-slate-100 hover:text-indigo-400 transition-colors">
                     {personalInfo.email}
                   </a>
                 </div>
@@ -38,7 +50,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-slate-400">Location</h4>
-                  <p className="text-slate-100">Available Worldwide (Remote)</p>
+                  <p className="text-slate-100">casablanca, morocco</p>
                 </div>
               </div>
             </div>
