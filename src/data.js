@@ -65,11 +65,12 @@ export const projectsData = [
     demo: 'https://gestion-financi-re-ten.vercel.app/'
   },
   {
-    title: 'Analytics Dashboard',
+    title: 'CRM-Client-Management-Platform',
     desc: 'Real-time data visualization turning complex data into beautiful interactive charts.',
     tech: ['React', 'D3.js', 'Tailwind'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2832&auto=format&fit=crop',
-    github: '#',
-    demo: '#'
+    image: '/crm.png',
+    
+    github: 'https://elmohtad-sami.github.io/Gestion-financi-re-/',
+    demo: 'https://crm-client-management.vercel.app/'
   }
 ];
