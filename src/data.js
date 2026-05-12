@@ -14,8 +14,8 @@ export const personalInfo = {
 
 export const skillsInfo = {
   core: ['React', 'Node.js', 'Tailwind CSS', 'JavaScript', 'Git'],
-  frontend: ['TypeScript', 'Next.js', 'Vue.js', 'Framer Motion'],
-  backend: ['Express', 'PostgreSQL', 'MongoDB', 'REST APIs'],
+  frontend: ['React', 'Tailwind CSS', 'JavaScript', 'Git', 'Next.js', 'HTML', 'CSS'],
+  backend: ['Express', 'PostgreSQL', 'MongoDB', 'REST APIs', 'TypeScript', 'Vue.js', 'Framer Motion'],
   tools: ['Docker', 'Vercel', 'Figma', 'Jest'],
   professional: [
     'Accounting: Financial reporting, and compliance with international standards (IFRS)',
@@ -72,5 +72,14 @@ export const projectsData = [
     
     github: 'https://elmohtad-sami.github.io/Gestion-financi-re-/',
     demo: 'https://crm-client-management.vercel.app/'
+  },
+  {
+    title: 'BlueWave-Kitchen',
+    desc: 'Real-time data visualization turning complex data into beautiful interactive charts.',
+    tech: ['html', 'javascript', 'css'],
+    image: '/blue.png',
+    
+    github: 'https://bluewave-kitchen.vercel.app/',
+    demo: 'https://bluewave-kitchen.vercel.app/'
   }
 ];

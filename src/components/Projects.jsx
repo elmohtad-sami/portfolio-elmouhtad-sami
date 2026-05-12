@@ -51,7 +51,7 @@ export default function Projects() {
                   <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
               )}
-              <div className="p-6 flex flex-col flex-grow">
+              <div className="p-6 flex flex-col grow">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-xl font-semibold text-slate-100 group-hover:text-indigo-400 transition-colors">{project.title}</h3>
                   <div className="flex space-x-3 text-slate-400" onClick={(e) => e.stopPropagation()}>
@@ -63,7 +63,7 @@ export default function Projects() {
                     </a>
                   </div>
                 </div>
-                <p className="text-slate-400 mb-6 flex-grow text-sm leading-relaxed">{project.desc}</p>
+                <p className="text-slate-400 mb-6 grow text-sm leading-relaxed">{project.desc}</p>
                 
                 <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-white/5">
                   {project.tech.map((t, index) => (

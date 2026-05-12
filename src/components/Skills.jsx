@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Layout, Database, Wrench, Briefcase, BookOpen, DollarSign, Receipt, Monitor, Brain } from 'lucide-react';
+import { Layout, Database, Wrench, Briefcase, BookOpen, DollarSign, Receipt, Monitor, Brain } from 'lucide-react';
 import { skillsInfo } from '../data';
 import { 
   SiReact, SiNodedotjs, SiTailwindcss, SiJavascript, SiGit,
@@ -8,7 +8,7 @@ import {
   SiExpress, SiPostgresql, SiMongodb,
   SiDocker, SiVercel, SiFigma, SiJest
 } from 'react-icons/si';
-import { FaServer } from 'react-icons/fa';
+import { FaServer, FaHtml5, FaCss3 } from 'react-icons/fa';
 
 const iconMap = {
   'React': <SiReact className="text-[#61DAFB] w-4 h-4" />,
@@ -16,6 +16,9 @@ const iconMap = {
   'Tailwind CSS': <SiTailwindcss className="text-[#06B6D4] w-4 h-4" />,
   'JavaScript': <SiJavascript className="text-[#F7DF1E] w-4 h-4" />,
   'Git': <SiGit className="text-[#F05032] w-4 h-4" />,
+  'GitHub': <SiGit className="text-[#F05032] w-4 h-4" />,
+  'HTML': <FaHtml5 className="text-[#E34F26] w-4 h-4" />,
+  'CSS': <FaCss3 className="text-[#1572B6] w-4 h-4" />,
   
   'TypeScript': <SiTypescript className="text-[#3178C6] w-4 h-4" />,
   'Next.js': <SiNextdotjs className="text-white w-4 h-4" />,
@@ -27,16 +30,15 @@ const iconMap = {
   'MongoDB': <SiMongodb className="text-[#47A248] w-4 h-4" />,
   'REST APIs': <FaServer className="text-slate-400 w-4 h-4" />,
   
-  'Docker': <SiDocker className="text-[#2496ED] w-4 h-4" />,
   'Vercel': <SiVercel className="text-white w-4 h-4" />,
   'Figma': <SiFigma className="text-[#F24E1E] w-4 h-4" />,
   'Jest': <SiJest className="text-[#C21325] w-4 h-4" />,
 
-  'Accounting: Financial reporting, and compliance with international standards (IFRS)': <BookOpen className="w-5 h-5 flex-shrink-0" />,
-  'Finance: Financial analysis, budgeting': <DollarSign className="w-5 h-5 flex-shrink-0" />,
-  'Taxation: Tax planning, compliance': <Receipt className="w-5 h-5 flex-shrink-0" />,
-  'Software Proficiency: Excel (advanced)': <Monitor className="w-5 h-5 flex-shrink-0" />,
-  'Soft Skills: Analytical thinking, problem-solving': <Brain className="w-5 h-5 flex-shrink-0" />
+  'Accounting: Financial reporting, and compliance with international standards (IFRS)': <BookOpen className="w-5 h-5 shrink-0" />,
+  'Finance: Financial analysis, budgeting': <DollarSign className="w-5 h-5 shrink-0" />,
+  'Taxation: Tax planning, compliance': <Receipt className="w-5 h-5 shrink-0" />,
+  'Software Proficiency: Excel (advanced)': <Monitor className="w-5 h-5 shrink-0" />,
+  'Soft Skills: Analytical thinking, problem-solving': <Brain className="w-5 h-5 shrink-0" />
 };
 
 const containerVariants = {
@@ -54,10 +56,9 @@ const cardVariants = {
 
 export default function Skills() {
   const groups = [
-    { title: 'Core Base', icon: <Terminal className="w-6 h-6" />, items: skillsInfo.core },
     { title: 'Frontend', icon: <Layout className="w-6 h-6" />, items: skillsInfo.frontend },
     { title: 'Backend', icon: <Database className="w-6 h-6" />, items: skillsInfo.backend },
-    { title: 'Tools', icon: <Wrench className="w-6 h-6" />, items: skillsInfo.tools },
+    { title: 'Tools', icon: <Wrench className="w-6 h-6" />, items: ['GitHub', 'Vercel'] },
     { title: 'Professional', icon: <Briefcase className="w-6 h-6" />, items: skillsInfo.professional }
   ];
 
@@ -84,13 +85,11 @@ export default function Skills() {
             viewport={{ once: true, margin: "-100px" }}
           >
             {groups.map((group, idx) => {
-              const isProfessional = group.title === 'Professional';
-              
               return (
                 <motion.div 
                   key={idx} 
                   variants={cardVariants}
-                  className={`p-6 sm:p-8 bg-slate-900/50 rounded-2xl border border-white/5 shadow-xl flex flex-col transition-all duration-300 hover:border-white/10 ${isProfessional ? 'md:col-span-2' : ''}`}
+                  className="p-6 sm:p-8 bg-slate-900/50 rounded-2xl border border-white/5 shadow-xl flex flex-col transition-all duration-300 hover:border-white/10"
                 >
                   <div className="flex items-center space-x-4 mb-8">
                     <div className="p-3 bg-indigo-500/20 text-indigo-400 rounded-xl">
